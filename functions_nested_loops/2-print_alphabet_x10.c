@@ -1,22 +1,19 @@
-/*
- * File: 2-print_alphabet_x10.c
- * Auth: Brennan D Baraban
- */
-
-#include "holberton.h"
+#include "main.h"
 
 /**
- * print_alphabet_x10 - Prints 10 times the alphabet, in lowercase.
+ * print_alphabet_x10 - Prints 10 times the alphabet, in lowercase
  */
 void print_alphabet_x10(void)
 {
-	int count = 0;
-	char letter;
+	int i;
+	char ch;
 
-	while (count++ <= 9)
+	for (i = 0; i < 10; i++)
 	{
-		for (letter = 'a'; letter <= 'z'; letter++)
-			_putchar(letter);
+		for (ch = 'a'; ch <= 'z'; ch++)
+		{
+			_putchar(ch);
+		}
 		_putchar('\n');
 	}
 }
