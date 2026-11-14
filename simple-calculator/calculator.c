@@ -1,6 +1,54 @@
 #include <stdio.h>
 
 /**
+ * add - Computes the sum of two numbers
+ * @a: First operand
+ * @b: Second operand
+ *
+ * Return: Sum of a and b
+ */
+double add(double a, double b)
+{
+	return (a + b);
+}
+
+/**
+ * subtract - Computes the difference of two numbers
+ * @a: First operand
+ * @b: Second operand
+ *
+ * Return: Difference of a and b
+ */
+double subtract(double a, double b)
+{
+	return (a - b);
+}
+
+/**
+ * multiply - Computes the product of two numbers
+ * @a: First operand
+ * @b: Second operand
+ *
+ * Return: Product of a and b
+ */
+double multiply(double a, double b)
+{
+	return (a * b);
+}
+
+/**
+ * divide - Computes the quotient of two numbers
+ * @a: First operand
+ * @b: Second operand
+ *
+ * Return: Quotient of a and b
+ */
+double divide(double a, double b)
+{
+	return (a / b);
+}
+
+/**
  * main - Entry point of the simple calculator program
  *
  * Return: Always 0 (Success)
@@ -8,7 +56,7 @@
 int main(void)
 {
 	int choice;
-	int a, b;
+	double a, b;
 
 	while (1)
 	{
@@ -27,33 +75,26 @@ int main(void)
 				printf("Bye!\n");
 				break;
 			}
-			else if (choice == 1)
+			else if (choice >= 1 && choice <= 4)
 			{
 				printf("A: ");
-				scanf("%d", &a);
+				scanf("%lf", &a);
 				printf("B: ");
-				scanf("%d", &b);
-				printf("Result: %d\n", a + b);
-			}
-			else if (choice == 2)
-			{
-				printf("A: ");
-				scanf("%d", &a);
-				printf("B: ");
-				scanf("%d", &b);
-				printf("Result: %d\n", a - b);
-			}
-			else if (choice == 3)
-			{
-				printf("A: ");
-				scanf("%d", &a);
-				printf("B: ");
-				scanf("%d", &b);
-				printf("Result: %d\n", a * b);
-			}
-			else if (choice == 4)
-			{
-				/* Division will be added in the next task */
+				scanf("%lf", &b);
+
+				if (choice == 1)
+					printf("Result: %g\n", add(a, b));
+				else if (choice == 2)
+					printf("Result: %g\n", subtract(a, b));
+				else if (choice == 3)
+					printf("Result: %g\n", multiply(a, b));
+				else if (choice == 4)
+				{
+					if (b == 0)
+						printf("Error: division by zero\n");
+					else
+						printf("Result: %g\n", divide(a, b));
+				}
 			}
 			else
 			{
