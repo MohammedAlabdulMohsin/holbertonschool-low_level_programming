@@ -7,7 +7,7 @@
  * @s2: second string (treated as "" if NULL)
  * @n: maximum number of bytes to copy from s2
  *
- * Return: pointer to newly allocated null-terminated string, or NULL on failure
+ * Return: pointer to new null-terminated string, or NULL on failure
  */
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
